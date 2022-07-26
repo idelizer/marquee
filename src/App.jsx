@@ -2,27 +2,41 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
-function charCounter(text) {
-  const charCount = {}
+function countChar(text) {
+  // Given an input text block, return a object counting the characters it contains. 
+  // Ignore characters not included in marquee letters alphabet and remove characters 
+  // that appear zero times from object. 
+  
+  const charCounter = {}
   const alpha = "abcdefghijklmnopqrstuvwxyz0123456789.,:'&!"
   
   for (let char of alpha) {
-    charCount[char] = 0;
+    charCounter[char] = 0;
   };
 
   text = text.toLowerCase().split("")
 
   for (let char of text) {
-    if (char in charCount) {
-       charCount[char] ++;
+    if (char in charCounter) {
+       charCounter[char] ++;
     };
   };
 
-  return charCount
+// remove all chars from display that are not in text 
+  for (let key of Object.keys(charCounter)) {
+    if (charCounter[key] === 0) {
+      delete charCounter[key];
+    };
+  };
+
+
+  return charCounter
 };
+
 
 function App() {
   const [text, setText] = useState("");
+  const element = <h1>Hello, world!</h1>;
 
   return (
     <div className="App">
@@ -31,8 +45,8 @@ function App() {
         value={text}
         onChange={(e)=>setText(e.target.value)}
       />
-      {JSON.stringify(charCounter(text))}
-      
+      {JSON.stringify(countChar(text))}
+      {element}
 
     </div>
   )
