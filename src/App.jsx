@@ -6,7 +6,7 @@ function countChar(text) {
   // Given an input text block, return a object counting the characters it contains. 
   // Ignore characters not included in marquee letters alphabet and remove characters 
   // that appear zero times from object. 
-  
+
   const charCounter = {}
   const alpha = "abcdefghijklmnopqrstuvwxyz0123456789.,:'&!"
   
@@ -29,14 +29,30 @@ function countChar(text) {
     };
   };
 
-
   return charCounter
 };
 
+function CharDisplay(props) {
+  return <h1>{props.char}: {props.count}</h1>;
+}
+
+function FullAlpha(props) {
+  const charCount = Object.entries(props.counts).map(
+    x => <div><CharDisplay char={x[0]} count={x[1]}/></div>
+  )
+
+  return (
+    <div>
+      {charCount}
+    </div>
+  )
+}
 
 function App() {
   const [text, setText] = useState("");
-  const element = <h1>Hello, world!</h1>;
+  // const element = <h1>Hello, world!</h1>;
+  //       {element}
+  //       {JSON.stringify(countChar(text))}
 
   return (
     <div className="App">
@@ -45,8 +61,8 @@ function App() {
         value={text}
         onChange={(e)=>setText(e.target.value)}
       />
-      {JSON.stringify(countChar(text))}
-      {element}
+
+      <FullAlpha counts={countChar(text)} />
 
     </div>
   )
