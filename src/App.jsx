@@ -7,7 +7,7 @@ function countChar(text) {
   // Ignore characters not included in marquee letters alphabet.
 
   const charCounter = {}
-  const alpha = "abcdefghijklmnopqrstuvwxyz0123456789.,:'&!"
+  const alpha = "abcdefghijklmnopqrstuvwxyz0123456789.,:'&!/"
   
   for (let char of alpha) {
     charCounter[char] = 0;
@@ -20,13 +20,6 @@ function countChar(text) {
        charCounter[char] ++;
     };
   };
-
-// remove all chars from display that are not in text --> now done in AlphaDisplay with filter  
-  // for (let key of Object.keys(charCounter)) {
-  //   if (charCounter[key] === 0) {
-  //     delete charCounter[key];
-  //   };
-  // };
 
   return charCounter
 };
@@ -78,39 +71,39 @@ function countDifference(text1, text2) {
   }
 
   return {
-    "charsGoingUp": Object.entries(charsGoingUp),
-    "charsComingDown": Object.entries(charsComingDown),
-    "charsStayingUp": Object.entries(charsStayingUp),
+    "charsGoingUp": charsGoingUp,
+    "charsComingDown": charsComingDown,
+    "charsStayingUp": charsStayingUp,
   }
  
 };
 
 function CounterRender(props) {
+  const charsGoingUp = props.dict.charsGoingUp
+  const charsComingDown = props.dict.charsComingDown
+  const charsStayingUp = props.dict.charsStayingUp
 
   return (
     <div>
       <div>
-        Characters going up: {props.dict.charsGoingUp}
+        <h2>Characters going up: </h2>
+        <AlphaDisplay counts={charsGoingUp} />
+      </div>
+      <div> 
+        <h2>Characters coming down: </h2>
+        <AlphaDisplay counts={charsComingDown} />
       </div>
       <div>
-        Characters coming down: {props.dict.charsComingDown}
-      </div>
-      <div>
-        Characters staying up: {props.dict.charsStayingUp}
+        <h2>Characters staying up: </h2>
+        <AlphaDisplay counts={charsStayingUp} />
       </div>
     </div>
   )
 };
 
-
-
-
 function App() {
   const [text1, setText1] = useState("");
   const [text2, setText2] = useState("");
-  // const element = <h1>Hello, world!</h1>;
-  //       {element}
-  //       {JSON.stringify(countChar(text))}
 
   return (
     <div className="App">
@@ -138,11 +131,3 @@ function App() {
 };
 
 export default App
-
-
-// get text
-// split text into substrings
-// count chars into object
-
-// do twice (current marquee, next marquee)
-// compare objects
