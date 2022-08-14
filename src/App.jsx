@@ -52,8 +52,11 @@ function countDifference(text1, text2) {
   const charsComingDown = {};    // dict of chars coming off marquee
   const charsStayingUp = {};     // dict of chars staying on marquee
 
-  let dict1 = countChar(text1['text1']);
-  let dict2 = countChar(text2['text2']);
+  console.log(typeof text1);
+  console.log(text1);
+
+  let dict1 = countChar(text1);
+  let dict2 = countChar(text2);
 
   for (let [key, value] of Object.entries(dict2)) {
     if (value > dict1[key]) {                   
@@ -80,6 +83,23 @@ function countDifference(text1, text2) {
     "charsStayingUp": Object.entries(charsStayingUp),
   }
  
+};
+
+function CounterRender(props) {
+
+  return (
+    <div>
+      <div>
+        Characters going up: {props.dict.charsGoingUp}
+      </div>
+      <div>
+        Characters coming down: {props.dict.charsComingDown}
+      </div>
+      <div>
+        Characters staying up: {props.dict.charsStayingUp}
+      </div>
+    </div>
+  )
 };
 
 
@@ -111,7 +131,7 @@ function App() {
       <AlphaDisplay counts={countChar(text2)} />
 
       <h1>Difference</h1>
-      <h2></h2>
+      <CounterRender dict={countDifference(text1, text2)} />
 
     </div>
   )
