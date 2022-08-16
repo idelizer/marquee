@@ -45,9 +45,6 @@ function countDifference(text1, text2) {
   const charsComingDown = {};    // dict of chars coming off marquee
   const charsStayingUp = {};     // dict of chars staying on marquee
 
-  console.log(typeof text1);
-  console.log(text1);
-
   let dict1 = countChar(text1);
   let dict2 = countChar(text2);
 
@@ -113,7 +110,7 @@ function App() {
         value={text1}
         onChange={(e)=>setText1(e.target.value)}
       />
-      <AlphaDisplay counts={countChar(text1)} />
+      {/* <AlphaDisplay counts={countChar(text1)} /> */}
 
       <h1>New Marquee</h1>
       <input
@@ -121,7 +118,7 @@ function App() {
         value={text2}
         onChange={(e)=>setText2(e.target.value)}
       />
-      <AlphaDisplay counts={countChar(text2)} />
+      {/* <AlphaDisplay counts={countChar(text2)} /> */}
 
       <h1>Difference</h1>
       <CounterRender dict={countDifference(text1, text2)} />

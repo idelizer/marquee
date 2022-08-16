@@ -5,6 +5,29 @@
   text-align: center;
 }
 
+body {
+  background-color: #424242;
+
+}
+
+input {
+  width: 100%;
+  padding: 8px 13px;
+  margin: 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  display: block;
+  margin : 0 auto;
+}
+input:focus {
+  background-color: red;
+  outline-color: green;
+}
+
+h1 {
+  width: 100%;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
