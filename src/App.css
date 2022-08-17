@@ -3,6 +3,11 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 335px;
+}
+
+#App {
+  width: 2000px;
 }
 
 body {
@@ -10,18 +15,21 @@ body {
 
 }
 
-input {
+textarea {
   width: 100%;
-  padding: 8px 13px;
-  margin: 8px;
+  padding: 12px 14px;
+  height: 97px;
   box-sizing: border-box;
-  border-radius: 4px;
   display: block;
-  margin : 0 auto;
+  border: none;
+  margin-bottom: 30px;
+  placeholder: "be nice!";
+  resize: none;
+  font-size: large;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 }
-input:focus {
-  background-color: red;
-  outline-color: green;
+textarea:focus {
+  outline-color: white;
 }
 
 h1 {

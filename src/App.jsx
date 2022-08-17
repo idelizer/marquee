@@ -7,7 +7,7 @@ function countChar(text) {
   // Ignore characters not included in marquee letters alphabet.
 
   const charCounter = {}
-  const alpha = "abcdefghijklmnopqrstuvwxyz0123456789.,:'&!/"
+  const alpha = "abcdefghijklmnopqrstuvwxyz0123456789.,:'&!/-"
   
   for (let char of alpha) {
     charCounter[char] = 0;
@@ -104,27 +104,37 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Current Marquee</h1>
-      <input
+      <h1>Marquee</h1>
+
+      <div>
+        <textarea
         type="text1"
         value={text1}
+        placeholder="Current Marquee"
         onChange={(e)=>setText1(e.target.value)}
       />
-      {/* <AlphaDisplay counts={countChar(text1)} /> */}
+      </div>
 
-      <h1>New Marquee</h1>
-      <input
+      <div>
+        <textarea
         type="text2"
         value={text2}
+        placeholder="New Marquee"
         onChange={(e)=>setText2(e.target.value)}
-      />
-      {/* <AlphaDisplay counts={countChar(text2)} /> */}
-
+        />
+      </div>
+      
       <h1>Difference</h1>
       <CounterRender dict={countDifference(text1, text2)} />
 
+      
     </div>
   )
 };
+
+// TODO
+// custom fonts? check against size of text box and previous marquee
+// fix display of character counts
+// marquee graphic at top, animate
 
 export default App
