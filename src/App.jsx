@@ -24,18 +24,25 @@ function countChar(text) {
   return charCounter
 };
 
-function CharDisplay(props) {
-  return <h1>{props.char}: {props.count}</h1>;
-};
-
 function AlphaDisplay(props) {
   const charCount = Object.entries(props.counts).filter(x => x[1] !== 0).map(
-    x => <div><CharDisplay char={x[0]} count={x[1]}/></div>
+    x => 
+      <tr>
+        <td>{x[0]}</td>
+        <td>{x[1]}</td>
+      </tr>
   )
 
   return (
     <div>
-      {charCount}
+      <table>
+        <tr>
+          <th>{props.title}</th>
+          <th></th>
+        </tr>
+        {charCount}
+
+      </table>
     </div>
   )
 };
@@ -83,16 +90,16 @@ function CounterRender(props) {
   return (
     <div>
       <div>
-        <h2>Characters going up: </h2>
-        <AlphaDisplay counts={charsGoingUp} />
+        {/* <h2>Characters going up: </h2> */}
+        <AlphaDisplay counts={charsGoingUp} title="Letters going up"/>
       </div>
       <div> 
-        <h2>Characters coming down: </h2>
-        <AlphaDisplay counts={charsComingDown} />
+        {/* <h2>Characters coming down: </h2> */}
+        <AlphaDisplay counts={charsComingDown} title="Letter coming down"/>
       </div>
       <div>
-        <h2>Characters staying up: </h2>
-        <AlphaDisplay counts={charsStayingUp} />
+        {/* <h2>Characters staying up: </h2> */}
+        <AlphaDisplay counts={charsStayingUp} title="Letters staying up"/>
       </div>
     </div>
   )
@@ -136,5 +143,6 @@ function App() {
 // custom fonts? check against size of text box and previous marquee
 // fix display of character counts
 // marquee graphic at top, animate
+// local storage for typing? how to store previous new as new current
 
 export default App
