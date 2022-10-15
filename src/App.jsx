@@ -85,18 +85,24 @@ function CounterRender(props) {
 
   return (
     <div>
-      <h2>Characters going up:</h2>
-      <table>
-           <AlphaDisplay counts={charsGoingUp}/>
-      </table>
-      <h3>Characters coming down:</h3>
-      <table>
-          <AlphaDisplay counts={charsComingDown}/>
-      </table>
-      <h3>Characters staying up:</h3>
-      <table>
-        <AlphaDisplay counts={charsStayingUp}/>
-      </table>       
+      <div id="dict1">
+        <h2>Characters going up:</h2>
+        <table>
+            <AlphaDisplay counts={charsGoingUp}/>
+        </table>
+      </div>
+      <div id="dict2">
+        <h3>Characters coming down:</h3>
+        <table>
+            <AlphaDisplay counts={charsComingDown}/>
+        </table>
+      </div>
+      <div id="dict3">
+        <h3>Characters staying up:</h3>
+        <table>
+          <AlphaDisplay counts={charsStayingUp}/>
+        </table>  
+      </div>
     </div>
   )
 };
@@ -107,29 +113,25 @@ function App() {
 
   return (
     <div className="App">
+
       <h1>Marquee</h1>
 
-      <div>
-        <textarea
-        type="text1"
-        value={text1}
-        placeholder="Current Marquee"
-        onChange={(e)=>setText1(e.target.value)}
+      <textarea
+      type="text1"
+      value={text1}
+      placeholder="Current Marquee"
+      onChange={(e)=>setText1(e.target.value)}
       />
-      </div>
 
-      <div>
-        <textarea
-        type="text2"
-        value={text2}
-        placeholder="New Marquee"
-        onChange={(e)=>setText2(e.target.value)}
-        />
-      </div>
+      <textarea
+      type="text2"
+      value={text2}
+      placeholder="New Marquee"
+      onChange={(e)=>setText2(e.target.value)}
+      />
       
       <CounterRender dict={countDifference(text1, text2)} />
 
-      
     </div>
   )
 };

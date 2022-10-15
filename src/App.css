@@ -10,40 +10,12 @@
   width: 2000px;
 }
 
-body {
-  background-color: #424242;
-
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-textarea {
-  width: 335px;
-  padding: 12px 14px;
-  height: 97px;
-  box-sizing: border-box;
-  display: block;
-  border: none;
-  margin-bottom: 30px;
-  placeholder: "be nice!";
-  resize: none;
-  font-size: large;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-}
-textarea:focus {
-  outline-color: white;
-}
-
-h1 {
-  width: 100%;
-}
-
-table {
-  width: 100%;
-  /* border: 1px solid; */
-  table-layout: fixed;
-}
-
-th {
-}
 
 .logo {
   height: 6em;
