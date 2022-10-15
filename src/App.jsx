@@ -25,29 +25,25 @@ function countChar(text) {
 };
 
 function AlphaDisplay(props) {
+  // 
   const charCount = Object.entries(props.counts).filter(x => x[1] !== 0).map(
     x => 
       <tr>
-        <td>{x[0]}</td>
-        <td>{x[1]}</td>
+        <td id="table-character">{x[0]}</td>
+        <td id="table-count">{x[1]}</td>
       </tr>
   )
 
   return (
-    <div>
-      <table>
-        <tr>
-          <th>{props.title}</th>
-          <th></th>
-        </tr>
-        {charCount}
-
-      </table>
-    </div>
+    <>
+       {charCount}
+    </>
   )
 };
 
 function countDifference(text1, text2) {
+  // given two text strings, return an object containing 3 dicts representing diff of texts
+
   const charsGoingUp = {};       // dict of chars going up on marquee
   const charsComingDown = {};    // dict of chars coming off marquee
   const charsStayingUp = {};     // dict of chars staying on marquee
@@ -89,18 +85,18 @@ function CounterRender(props) {
 
   return (
     <div>
-      <div>
-        {/* <h2>Characters going up: </h2> */}
-        <AlphaDisplay counts={charsGoingUp} title="Letters going up"/>
-      </div>
-      <div> 
-        {/* <h2>Characters coming down: </h2> */}
-        <AlphaDisplay counts={charsComingDown} title="Letter coming down"/>
-      </div>
-      <div>
-        {/* <h2>Characters staying up: </h2> */}
-        <AlphaDisplay counts={charsStayingUp} title="Letters staying up"/>
-      </div>
+      <h2>Characters going up:</h2>
+      <table>
+           <AlphaDisplay counts={charsGoingUp}/>
+      </table>
+      <h3>Characters coming down:</h3>
+      <table>
+          <AlphaDisplay counts={charsComingDown}/>
+      </table>
+      <h3>Characters staying up:</h3>
+      <table>
+        <AlphaDisplay counts={charsStayingUp}/>
+      </table>       
     </div>
   )
 };
@@ -131,7 +127,6 @@ function App() {
         />
       </div>
       
-      <h1>Difference</h1>
       <CounterRender dict={countDifference(text1, text2)} />
 
       

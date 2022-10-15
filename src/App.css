@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  width: 335px;
+  width: 355px;
 }
 
 #App {
@@ -16,7 +16,7 @@ body {
 }
 
 textarea {
-  width: 100%;
+  width: 335px;
   padding: 12px 14px;
   height: 97px;
   box-sizing: border-box;
@@ -34,6 +34,15 @@ textarea:focus {
 
 h1 {
   width: 100%;
+}
+
+table {
+  width: 100%;
+  /* border: 1px solid; */
+  table-layout: fixed;
+}
+
+th {
 }
 
 .logo {
