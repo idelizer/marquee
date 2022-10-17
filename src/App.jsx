@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import marqueeOne from './assets/1marquee.svg'
+import marqueeTwo from './assets/2marquee.svg'
+import marqueeThree from './assets/3marquee.svg'
+
 
 function countChar(text) {
   // Given an input text block, return a object counting the characters it contains. 
@@ -107,6 +111,12 @@ function CounterRender(props) {
   )
 };
 
+// animation
+//  learn how to usestate and use effect
+// check subsolver src/pages/tutorial.tsx for timer under page three
+// google useinterval
+// }
+
 function App() {
   const [text1, setText1] = useState("");
   const [text2, setText2] = useState("");
@@ -114,7 +124,8 @@ function App() {
   return (
     <div className="App">
 
-      <h1>Marquee</h1>
+      <img src={marqueeOne}></img>
+      
 
       <textarea
       type="text1"
@@ -136,9 +147,10 @@ function App() {
   )
 };
 
+
 // TODO
 // custom fonts? check against size of text box and previous marquee
-// fix display of character counts
+// fix display of characters/counts 
 // marquee graphic at top, animate
 // local storage for typing? how to store previous new as new current
 

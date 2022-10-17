@@ -23,11 +23,10 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  width: 100%;
-  font-size: 3.2em;
-  line-height: 1.1;
+img {
+  width: 600px;
 }
+
 
 
 textarea {
