@@ -25,9 +25,16 @@ body {
 
 img {
   width: 600px;
+  animation-name: marquee;
+  animation-duration: .3s;
+  animation-iteration-count: infinite;
 }
 
-
+@keyframes marquee {
+  0%   {content: url('./assets/1marquee.svg')}
+  33%  {content: url('./assets/2marquee.svg')}
+  66%  {content: url('./assets/3marquee.svg')}
+}
 
 textarea {
   width: 335px;
