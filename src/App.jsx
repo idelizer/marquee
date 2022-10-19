@@ -111,12 +111,6 @@ function CounterRender(props) {
   )
 };
 
-// animation
-//  learn how to usestate and use effect
-// check subsolver src/pages/tutorial.tsx for timer under page three
-// google useinterval
-// }
-
 function App() {
   const [text1, setText1] = useState("");
   const [text2, setText2] = useState("");
@@ -147,11 +141,10 @@ function App() {
   )
 };
 
-
 // TODO
 // custom fonts? check against size of text box and previous marquee
 // fix display of characters/counts 
-// marquee graphic at top, animate
+// change tab icon 
 // local storage for typing? how to store previous new as new current
 
 export default App
