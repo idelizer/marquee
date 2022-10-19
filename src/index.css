@@ -24,9 +24,9 @@ body {
 }
 
 img {
-  width: 600px;
+  width: 400px;
   animation-name: marquee;
-  animation-duration: .3s;
+  animation-duration: .35s;
   animation-iteration-count: infinite;
 }
 
@@ -73,17 +73,20 @@ input {
 }
 
 #dict1 {
-  background-color: #213547;
+  background-color: #c5e0dc;
+  color: red;
   padding: 10px;
 }
 
 #dict2 {
-  background-color: #1a1a1a;
+  background-color: #fffb8b;
+  color: black;
   padding: 10px;
 }
 
 #dict3 {
-  background-color: #242424;
+  background-color: #fffb8b;
+  color: black;
   padding: 10px;
 }
 

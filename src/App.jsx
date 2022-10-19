@@ -90,7 +90,7 @@ function CounterRender(props) {
   return (
     <div>
       <div id="dict1">
-        <h2>Characters going up:</h2>
+        <h3>Characters going up:</h3>
         <table>
             <AlphaDisplay counts={charsGoingUp}/>
         </table>
