@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import marqueeOne from './assets/1marquee.svg'
 import marqueeTwo from './assets/2marquee.svg'
