@@ -28,6 +28,7 @@ img {
   animation-name: marquee;
   animation-duration: .35s;
   animation-iteration-count: infinite;
+  padding-bottom: 30px;
 }
 
 @keyframes marquee {
@@ -43,7 +44,8 @@ textarea {
   box-sizing: border-box;
   display: block;
   border: none;
-  margin-bottom: 30px;
+  border-radius:6px;
+  margin: 20px;
   placeholder: "be nice!";
   resize: none;
   font-size: large;
@@ -61,8 +63,6 @@ table {
   border-radius:6px;
 }
 
-
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -76,6 +76,12 @@ input {
   font-size: 1.2em;
 }
 
+#dict1, #dict2, #dict3 {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 10px;
+}
+
 #dict1 {
   color: red;
 }
@@ -86,7 +92,6 @@ input {
 
 #dict2, #dict3 {
   color: black;
-  padding: 10px;
 }
 
 #dict2 tr:nth-child(even), #dict3 tr:nth-child(even) {
@@ -95,36 +100,4 @@ input {
 
 tr:nth-child(odd) {
   background-color: white;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
