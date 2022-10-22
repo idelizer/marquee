@@ -55,9 +55,13 @@ textarea:focus {
 
 table {
   width: 100%;
-  /* border: 1px solid; */
   table-layout: fixed;
+  border-spacing: 0px;
+  border:solid white 6px;
+  border-radius:6px;
 }
+
+
 
 a {
   font-weight: 500;
@@ -76,15 +80,7 @@ input {
   color: red;
 }
 
-#dict1 tr:nth-child(odd) {
-  background-color: #c5e0dc;
-}
-
-tr:nth-child(even) {
-  background-color: white;
-}
-
-#dict1 tr:nth-child(odd) {
+#dict1 tr:nth-child(even) {
   background-color: #c5e0dc;
 }
 
@@ -93,11 +89,13 @@ tr:nth-child(even) {
   padding: 10px;
 }
 
-#dict2 tr:nth-child(odd), #dict3 tr:nth-child(odd) {
+#dict2 tr:nth-child(even), #dict3 tr:nth-child(even) {
   background-color: #fffb8b;
 }
 
-
+tr:nth-child(odd) {
+  background-color: white;
+}
 
 button {
   border-radius: 8px;
