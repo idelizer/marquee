@@ -73,22 +73,31 @@ input {
 }
 
 #dict1 {
-  background-color: #c5e0dc;
   color: red;
-  padding: 10px;
 }
 
-#dict2 {
-  background-color: #fffb8b;
+#dict1 tr:nth-child(odd) {
+  background-color: #c5e0dc;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}
+
+#dict1 tr:nth-child(odd) {
+  background-color: #c5e0dc;
+}
+
+#dict2, #dict3 {
   color: black;
   padding: 10px;
 }
 
-#dict3 {
+#dict2 tr:nth-child(odd), #dict3 tr:nth-child(odd) {
   background-color: #fffb8b;
-  color: black;
-  padding: 10px;
 }
+
+
 
 button {
   border-radius: 8px;

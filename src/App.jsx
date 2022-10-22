@@ -10,13 +10,13 @@ function countChar(text) {
   // Ignore characters not included in marquee letters alphabet.
 
   const charCounter = {}
-  const alpha = "abcdefghijklmnopqrstuvwxyz0123456789.,:'&!/-"
+  const alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,:'&!/-"
   
   for (let char of alpha) {
     charCounter[char] = 0;
   };
 
-  text = text.toLowerCase().split("")
+  text = text.toUpperCase().split("")
 
   for (let char of text) {
     if (char in charCounter) {
@@ -89,19 +89,19 @@ function CounterRender(props) {
   return (
     <div>
       <div id="dict1">
-        <h3>Characters going up:</h3>
+        <h3>Characters Going Up</h3>
         <table>
             <AlphaDisplay counts={charsGoingUp}/>
         </table>
       </div>
       <div id="dict2">
-        <h3>Characters coming down:</h3>
+        <h3>Characters Coming Down</h3>
         <table>
             <AlphaDisplay counts={charsComingDown}/>
         </table>
       </div>
       <div id="dict3">
-        <h3>Characters staying up:</h3>
+        <h3>Characters Staying Up</h3>
         <table>
           <AlphaDisplay counts={charsStayingUp}/>
         </table>  
