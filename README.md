@@ -1,7 +1,7 @@
 # Marquee
 
 ## About
-Marquee is a character counter webapp built to help artists design their marquee displays. You can visit the completed site [here](https://marquee.eliza.engineer/).
+Marquee is a character counter webapp built to help artists design their marquee displays. Enter the characters you will be removing from your marquee display and the characters you will be putting up in a new display, and Marquee will give you counts of the characters staying on the board, the characters going up, and the characters coming down. You can visit the completed site [here](https://marquee.eliza.engineer/).
 
 <p align="center">
   <img src="src/assets/iconmarquee.svg" width="200" display="flex"/>
